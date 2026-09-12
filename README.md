@@ -14,6 +14,7 @@ python -m http.server 8000
 
 - `index.html`: 이력서와 프로젝트 콘텐츠
 - `styles.css`: 화면, 모바일, A4 인쇄 레이아웃
+- `script.js`: 화이트·다크 모드 전환과 선택 상태 저장
 - `assets/`: AIDEO와 뿌리오 프로젝트 이미지
 
 상단의 `PDF 저장` 버튼을 누르면 브라우저 인쇄 화면에서 PDF로 저장할 수 있습니다.

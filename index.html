@@ -7,6 +7,16 @@
     <meta name="theme-color" content="#f5f6f8" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#111419" media="(prefers-color-scheme: dark)" />
     <title>석종수 | 백엔드 개발자 이력서 · 포트폴리오</title>
+    <script>
+      try {
+        const savedTheme = localStorage.getItem("portfolio-theme");
+        if (savedTheme === "light" || savedTheme === "dark") {
+          document.documentElement.dataset.theme = savedTheme;
+        }
+      } catch (error) {
+        console.warn("테마 설정을 불러오지 못했습니다.", error);
+      }
+    </script>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -15,7 +25,8 @@
       <a class="wordmark" href="#profile" aria-label="프로필로 이동">석종수</a>
       <nav aria-label="주요 메뉴">
         <a href="#resume">이력서</a><a href="#projects">프로젝트</a><a href="#skills">기술</a>
-        <button type="button" onclick="window.print()">PDF 저장</button>
+        <button class="print-button" type="button" onclick="window.print()">PDF 저장</button>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-pressed="false">다크 모드</button>
       </nav>
     </header>
 
@@ -33,16 +44,6 @@
         <address class="contact-list">
           <span>Email</span><a href="mailto:whdtn7855@gmail.com">whdtn7855@gmail.com</a>
         </address>
-      </section>
-
-      <section class="proof-strip" aria-labelledby="proof-title">
-        <h2 id="proof-title">대표 검증 결과</h2>
-        <dl>
-          <div><dt>20,000 VU</dt><dd>쿠폰 발급 부하 테스트</dd></div>
-          <div><dt>0.00%</dt><dd>HTTP 요청 실패율</dd></div>
-          <div><dt>350만 건</dt><dd>발급 요청 정합성 검사</dd></div>
-          <div><dt>위반 0건</dt><dd>중복·초과 발급·상태 불일치</dd></div>
-        </dl>
       </section>
 
       <section class="resume" id="resume" aria-labelledby="resume-title">
@@ -83,6 +84,15 @@
           <div class="project-facts" aria-label="CLUTCH 사용 기술">
             <strong>Backend</strong><span>Java, Spring Boot, MySQL, Redis, Kafka</span><strong>Infra</strong><span>Docker, GitHub Actions, Self-hosted Runner</span><strong>Test</strong><span>k6, Prometheus, Grafana</span>
           </div>
+          <section class="project-proof" aria-labelledby="clutch-proof-title">
+            <h4 id="clutch-proof-title">대표 검증 결과</h4>
+            <dl>
+              <div><dt>20,000 VU</dt><dd>쿠폰 발급 부하 테스트</dd></div>
+              <div><dt>0.00%</dt><dd>HTTP 요청 실패율</dd></div>
+              <div><dt>350만 건</dt><dd>발급 요청 정합성 검사</dd></div>
+              <div><dt>위반 0건</dt><dd>중복·초과 발급·상태 불일치</dd></div>
+            </dl>
+          </section>
           <div class="case-list">
             <section><h4>동시 쿠폰 발급 병목 추적</h4><p>성공 수량 행의 X-lock 경합과 Docker NAT 구간을 분리해 추적했습니다. 부하를 두 장비에 분산하고 k6를 Windows 네이티브로 실행했습니다.</p><p class="result"><strong>결과</strong> 쿠폰 10,000건 발급, 품절 10,000건, 전송 실패 0건</p><a href="https://github.com/seok-cess/Clutch-BE/blob/dev/docs/07-verification/results/2026-08-30-coupon-20000-vu-load-test.md" target="_blank" rel="noreferrer">부하 테스트 보고서</a></section>
             <section><h4>대량 데이터 정합성 검증</h4><p>MySQL named lock과 읽기 전용 스냅샷을 적용했습니다. 검사와 결과 저장 트랜잭션을 분리하고 중단된 실행 이력 복구도 구현했습니다.</p><p class="result"><strong>결과</strong> 100만 사용자, 350만 요청 기준 정합성 위반 0건</p><a href="https://github.com/seok-cess/Clutch-BE/blob/dev/docs/07-verification/results/2026-08-26-coupon-integrity.md" target="_blank" rel="noreferrer">정합성 검증 결과</a></section>
@@ -91,18 +101,48 @@
         </article>
 
         <div class="other-projects">
-          <article class="project compact-project">
-            <header class="project-header"><div><p class="project-period">2026.07.15 - 2026.07.27</p><h3>댕고</h3></div><a href="https://github.com/meongkk/daenggo-BE" target="_blank" rel="noreferrer">GitHub</a></header>
-            <p>반려동물 일상 서비스의 인증 전체 생명주기와 그룹 권한을 구현했습니다.</p>
-            <ul><li>JWT Access Token과 Refresh Token 회전</li><li>카카오 OAuth 신규 및 기존 회원 분기</li><li>그룹 역할, 상태 전이, 공유 범위 설계</li></ul>
+          <article class="project project-detail">
+            <header class="project-header">
+              <div><p class="project-period">2026.07.15 - 2026.07.27</p><h3>댕고</h3><p>반려동물 일상 서비스의 인증 전체 생명주기와 그룹 권한을 구현했습니다.</p></div>
+              <a href="https://github.com/meongkk/daenggo-BE" target="_blank" rel="noreferrer">GitHub 저장소</a>
+            </header>
+            <div class="project-facts compact-facts" aria-label="댕고 구현 범위"><strong>Focus</strong><span>JWT 인증, Kakao OAuth, 그룹 권한</span></div>
+            <div class="case-list">
+              <section><h4>토큰 생명주기</h4><p>Access Token과 Refresh Token을 분리하고 Refresh Token 회전 구조를 구현했습니다.</p><p class="result"><strong>구현</strong> 재발급 과정에서 Refresh Token을 함께 교체</p></section>
+              <section><h4>카카오 로그인 분기</h4><p>카카오 OAuth 응답을 기준으로 신규 회원과 기존 회원의 인증 흐름을 나눴습니다.</p><p class="result"><strong>구현</strong> 소셜 로그인 이후 회원 상태에 맞는 처리 흐름 구성</p></section>
+              <section><h4>그룹 권한 설계</h4><p>그룹 역할과 상태 전이, 데이터 공유 범위를 서비스 규칙에 맞게 설계했습니다.</p><p class="result"><strong>구현</strong> 역할과 그룹 상태에 따른 접근 범위 분리</p></section>
+            </div>
           </article>
-          <article class="project compact-project logo-project">
-            <img src="assets/aideo.png" alt="AIDEO 프로젝트 로고" width="260" height="327" loading="lazy" />
-            <div><header class="project-header"><div><p class="project-period">2025.02.15 - 2025.05.30</p><h3>AIDEO</h3></div><a href="https://github.com/ComPyeong-Capstone" target="_blank" rel="noreferrer">GitHub</a></header><p>생성형 AI로 대본, 이미지, TTS, 자막, 배경음악을 합성하는 숏폼 제작 서비스입니다.</p><ul><li>Whisper word timestamp 기반 TTS 및 자막 싱크 개선</li><li>AWS S3 미디어 저장과 MoviePy 영상 합성</li><li>Semaphore 3으로 외부 생성 요청 동시 실행 제한</li></ul></div>
+
+          <article class="project project-detail project-with-mark">
+            <img class="project-mark" src="assets/aideo.png" alt="AIDEO 프로젝트 로고" width="260" height="327" loading="lazy" />
+            <div>
+              <header class="project-header">
+                <div><p class="project-period">2025.02.15 - 2025.05.30</p><h3>AIDEO</h3><p>생성형 AI로 대본, 이미지, TTS, 자막, 배경음악을 합성하는 숏폼 제작 서비스입니다.</p></div>
+                <a href="https://github.com/ComPyeong-Capstone" target="_blank" rel="noreferrer">GitHub 조직</a>
+              </header>
+              <div class="project-facts compact-facts" aria-label="AIDEO 사용 기술"><strong>Backend</strong><span>Python, FastAPI</span><strong>Media</strong><span>Whisper, MoviePy, AWS S3</span></div>
+              <div class="case-list">
+                <section><h4>음성과 자막 동기화</h4><p>Whisper word timestamp를 활용해 TTS 음성과 자막의 싱크를 개선했습니다.</p><p class="result"><strong>구현</strong> 단어 단위 타임스탬프를 자막 배치에 반영</p></section>
+                <section><h4>영상 합성 파이프라인</h4><p>AWS S3에 미디어를 저장하고 MoviePy로 이미지, 음성, 자막을 하나의 영상으로 합성했습니다.</p><p class="result"><strong>구현</strong> 생성 결과 저장부터 최종 영상 출력까지 연결</p></section>
+                <section><h4>외부 요청 제한</h4><p>외부 생성 요청이 동시에 과도하게 실행되지 않도록 Semaphore를 적용했습니다.</p><p class="result"><strong>구현</strong> 동시 실행 요청을 3개로 제한</p></section>
+              </div>
+            </div>
           </article>
-          <article class="project compact-project logo-project">
-            <img src="assets/ppurio.png" alt="뿌리오 프로젝트 로고" width="512" height="512" loading="lazy" />
-            <div><header class="project-header"><div><p class="project-period">2024.10.08 - 2024.12.04</p><h3>뿌리오</h3></div><a href="https://github.com/CodingPing-PreCapstone/Coding-Ping-Webpage" target="_blank" rel="noreferrer">GitHub</a></header><p>AI 문자 문구와 이미지를 생성하고 저장, 발송까지 연결했습니다.</p><ul><li>Firestore 접근 로직을 공통 클래스로 분리</li><li>최근 메시지 10개 유지 정책 구현</li></ul></div>
+
+          <article class="project project-detail project-with-mark">
+            <img class="project-mark" src="assets/ppurio.png" alt="뿌리오 프로젝트 로고" width="512" height="512" loading="lazy" />
+            <div>
+              <header class="project-header">
+                <div><p class="project-period">2024.10.08 - 2024.12.04</p><h3>뿌리오</h3><p>AI 문자 문구와 이미지를 생성하고 저장, 발송까지 연결한 서비스입니다.</p></div>
+                <a href="https://github.com/CodingPing-PreCapstone/Coding-Ping-Webpage" target="_blank" rel="noreferrer">GitHub 저장소</a>
+              </header>
+              <div class="project-facts compact-facts" aria-label="뿌리오 구현 범위"><strong>Data</strong><span>Firebase Firestore</span><strong>Focus</strong><span>AI 콘텐츠 생성, 메시지 저장과 발송</span></div>
+              <div class="case-list two-cases">
+                <section><h4>데이터 접근 구조화</h4><p>반복되는 Firestore 접근 로직을 공통 클래스로 분리했습니다.</p><p class="result"><strong>구현</strong> 저장과 조회 로직의 중복 제거</p></section>
+                <section><h4>최근 메시지 관리</h4><p>사용자가 최근 생성한 메시지를 다시 확인할 수 있도록 저장 정책을 구현했습니다.</p><p class="result"><strong>구현</strong> 사용자별 최근 메시지 10개 유지</p></section>
+              </div>
+            </div>
           </article>
         </div>
       </section>
@@ -110,5 +150,6 @@
       <section class="closing" aria-labelledby="closing-title"><div><h2 id="closing-title">더 자세한 구현과 검증 기록</h2><p>프로젝트 저장소에서 코드와 기술 문서를 확인할 수 있습니다.</p></div><a href="mailto:whdtn7855@gmail.com">whdtn7855@gmail.com</a></section>
     </main>
     <footer><span>석종수 · Backend Developer</span><a href="#profile">맨 위로</a></footer>
+    <script src="script.js"></script>
   </body>
 </html>

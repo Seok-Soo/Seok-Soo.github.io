@@ -49,4 +49,14 @@
  .case-stages>div{grid-template-columns:1fr;gap:5px}
  .case-heading h3{font-size:1.15rem}
 }
+:root{color-scheme:light;--solution-text:#ad4038}
+:root[data-theme="dark"]{color-scheme:dark;--background:#17161c;--surface:#201f27;--text:#eeeaf2;--muted:#b3acbd;--line:#33303c;--line-strong:#484253;--accent:#c5a5f0;--accent-soft:#2b223a;--solution-text:#f49c91}
+.site-header{background:var(--background)}
+.site-header nav{align-items:center;gap:clamp(10px,2.2vw,28px)}
+.theme-toggle{min-height:36px;padding:6px 10px;border:1px solid var(--line-strong);border-radius:4px;background:var(--surface);color:var(--text);font:inherit;white-space:nowrap;cursor:pointer}
+.theme-toggle:hover{border-color:var(--accent);color:var(--accent)}
+.theme-toggle:active{transform:translateY(1px)}
+.case-stages .solution dd strong{color:var(--solution-text)}
+.technical-note{color:var(--text)}
+.skip-link{background:var(--accent);color:var(--background)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}

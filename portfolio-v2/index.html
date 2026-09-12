@@ -4,11 +4,21 @@
   <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Java와 Spring Boot를 중심으로 동시성, 인증, 데이터 정합성을 검증해 온 백엔드 개발자 석종수의 포트폴리오입니다.">
   <meta name="theme-color" content="#ffffff"><title>석종수 | Backend Engineering Portfolio</title>
+  <script>
+    (() => {
+      let saved;
+      try { saved = localStorage.getItem('portfolio-v2-theme'); } catch {}
+      const theme = saved === 'dark' || saved === 'light'
+        ? saved : (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.dataset.theme = theme;
+      document.querySelector('meta[name="theme-color"]').content = theme === 'dark' ? '#17161c' : '#ffffff';
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <a class="skip-link" href="#content">본문으로 바로가기</a>
-  <header class="site-header"><a class="brand" href="#top">jongsoo</a><nav aria-label="외부 링크"><a href="https://github.com/seok-cess/Clutch-BE" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:whdtn7855@gmail.com">Email ↗</a></nav></header>
+  <header class="site-header"><a class="brand" href="#top">jongsoo</a><nav aria-label="외부 링크 및 화면 설정"><a href="https://github.com/seok-cess/Clutch-BE" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:whdtn7855@gmail.com">Email ↗</a><button class="theme-toggle" id="theme-toggle" type="button" aria-label="다크 모드" aria-pressed="false">다크 모드</button></nav></header>
 
   <section class="hero" id="top" aria-labelledby="hero-name">
     <div class="hero-copy">
@@ -60,7 +70,7 @@
 
       <article class="project-document case-document" id="clutch" aria-labelledby="clutch-title">
         <header class="project-header">
-
+          <img class="case-logo" src="assets/clutch.png" width="64" height="64" alt="CLUTCH 로고" loading="lazy">
           <div class="project-heading"><h2 id="clutch-title">CLUTCH</h2><p class="case-description">LoL Esports 시청 경험을 쿠폰, 포인트, 세트 승패 예측으로 연결한 서비스</p><p class="case-meta">2026.08.11 - 08.31 · 부하 테스트 · 데이터 정합성 · CI/CD</p></div>
           <a href="https://github.com/seok-cess/Clutch-BE" target="_blank" rel="noreferrer">GitHub ↗</a>
         </header>
@@ -85,7 +95,7 @@
 
       <article class="project-document case-document" id="daenggo" aria-labelledby="daenggo-title">
         <header class="project-header">
-
+          <img class="case-logo" src="assets/daenggo.png" width="64" height="64" alt="댕고 로고" loading="lazy">
           <div class="project-heading"><h2 id="daenggo-title">DAENGGO</h2><p class="case-description">반려동물 일상을 공유하는 서비스</p><p class="case-meta">2026.07.15 - 07.27 · 인증 · OAuth · 그룹 권한</p></div>
           <a href="https://github.com/meongkk/daenggo-BE" target="_blank" rel="noreferrer">GitHub ↗</a>
         </header>

@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Java와 Spring Boot를 중심으로 동시성, 인증, 데이터 정합성을 검증해 온 백엔드 개발자 석종수의 포트폴리오입니다.">
+  <meta name="theme-color" content="#ffffff"><title>석종수 | Backend Engineering Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">본문으로 바로가기</a>
+  <header class="site-header"><a class="brand" href="#top">jongsoo</a><nav aria-label="외부 링크"><a href="https://github.com/seok-cess/Clutch-BE" target="_blank" rel="noreferrer">GitHub ↗</a><a href="mailto:whdtn7855@gmail.com">Email ↗</a></nav></header>
+
+  <section class="hero" id="top" aria-labelledby="hero-name">
+    <div class="hero-copy">
+      <p class="accent-text">백엔드 개발자</p>
+      <div class="name-row"><h1 id="hero-name">석종수</h1><span>Seok Jongsoo</span></div>
+      <p class="stack-line">Java · Spring Boot</p>
+      <div class="introduction"><p>서비스를 구현한 뒤 부하 테스트와 데이터 검증을 통해 결과를 확인해 왔습니다.</p><p>동시성 제어, 인증 생명주기, 운영 자동화를 직접 다루며 재현 가능한 근거를 남기는 개발자입니다.</p></div>
+      <ul class="principles"><li>체감이 아니라 수치로 병목을 찾습니다.</li><li>구현 이후 데이터의 일관성을 확인합니다.</li><li>판단 과정과 검증 조건을 문서로 남깁니다.</li><li>실패 이후의 시스템 상태와 복구까지 고려합니다.</li></ul>
+      <a class="project-jump" href="#projects">프로젝트 보기</a>
+    </div>
+    <div class="portrait-placeholder" role="img" aria-label="석종수 프로필 사진을 추가할 영역"><strong>SJS</strong><span>PROFILE PHOTO</span></div>
+  </section>
+
+  <div class="page-layout" id="content">
+    <nav class="section-nav" aria-label="페이지 목차">
+      <a href="#skills">기술</a><a href="#activity">활동·수상</a><a href="#education">학력</a><a href="#projects">프로젝트</a>
+      <div class="project-nav"><a href="#clutch">CLUTCH</a><a href="#daenggo">DAENGGO</a><a href="#aideo">AIDEO</a><a href="#ppurio">PPURIO</a></div>
+    </nav>
+
+    <main class="main-content">
+      <section class="content-section" id="skills" aria-labelledby="skills-title">
+        <h2 id="skills-title">기술과 사용 경험</h2>
+        <div class="table-wrap"><table><thead><tr><th>구분</th><th>사용 경험</th><th>프로젝트에서 맡은 역할</th></tr></thead><tbody>
+          <tr><th>Backend</th><td>Java, Spring Boot, Spring Security, Spring Data JPA</td><td>API, 서비스, 인증 생명주기, 도메인 규칙 구현</td></tr>
+          <tr><th>Data & Concurrency</th><td>MySQL, Redis, Firebase Firestore</td><td>동시 쿠폰 발급, 중복 방지, 정합성 검증, 데이터 접근 구조화</td></tr>
+          <tr><th>Messaging</th><td>Kafka</td><td>핵심 처리와 후속 작업의 실패 경로 분리</td></tr>
+          <tr><th>Test & Operation</th><td>k6, Prometheus, Grafana</td><td>부하 테스트, 병목 분석, 대량 데이터 검증</td></tr>
+          <tr><th>Infrastructure</th><td>AWS EC2, AWS S3, Docker, GitHub Actions</td><td>컨테이너 실행 환경과 자동 검증·배포 구성</td></tr>
+          <tr><th>AI & Media</th><td>Python, FastAPI, Whisper, MoviePy</td><td>TTS·자막 동기화와 영상 합성 파이프라인 구현</td></tr>
+        </tbody></table></div>
+      </section>
+
+      <section class="content-section" id="activity" aria-labelledby="activity-title"><h2 id="activity-title">활동과 수상</h2>
+        <article class="simple-entry"><h3>LG U+ URECA 4기 · Backend</h3><p>Java와 Spring 기반 백엔드 개발, 데이터베이스, Redis·Kafka, Docker 환경을 학습하고 팀 프로젝트에 적용했습니다. 기능 구현 이후 테스트 조건과 결과를 문서로 남겼습니다.</p></article>
+        <article class="simple-entry"><h3>종합프로젝트 경진대회 우수상 · CLUTCH</h3><p>LoL Esports 팬 참여 플랫폼 CLUTCH로 우수상을 받았습니다. 동시 쿠폰 발급, 데이터 정합성 검사, 테스트와 배포 자동화를 담당했습니다.</p></article>
+        <article class="simple-entry"><h3>캡스톤디자인 작품발표회 우수상 · AIDEO</h3><p>생성형 AI를 활용한 숏폼 제작 서비스 AIDEO로 우수상을 받았습니다. 음성·자막 동기화와 영상 합성 파이프라인을 구현했습니다.</p></article>
+      </section>
+
+      <section class="content-section" id="education" aria-labelledby="education-title"><h2 id="education-title">학력</h2><article class="simple-entry education-entry"><h3>한성대학교 컴퓨터공학 전공</h3><p>2026.02 · 졸업</p></article></section>
+
+      <section class="content-section projects-section" id="projects" aria-labelledby="projects-title"><h2 id="projects-title">프로젝트</h2>
+        <div class="project-overview">
+          <a href="#clutch"><strong>CLUTCH</strong><span>LoL Esports 팬 참여 플랫폼</span><span>동시 쿠폰 발급 · 정합성 검증 · CI/CD</span><small>2026.08</small><em>20,000 VU · HTTP 실패율 0.00%</em></a>
+          <a href="#daenggo"><strong>DAENGGO</strong><span>반려동물 일상 서비스</span><span>JWT 인증 · Kakao OAuth · 그룹 권한</span><small>2026.07</small><em>인증 전체 생명주기 구현</em></a>
+          <a href="#aideo"><strong>AIDEO</strong><span>생성형 AI 숏폼 제작 서비스</span><span>미디어 파이프라인 · 동시 요청 제한</span><small>2025.02 - 05</small><em>캡스톤디자인 우수상</em></a>
+          <a href="#ppurio"><strong>PPURIO</strong><span>AI 문자 생성·발송 서비스</span><span>Firestore · 데이터 접근 구조</span><small>2024.10 - 12</small><em>최근 메시지 유지 정책 구현</em></a>
+        </div>
+      </section>
+
+      <article class="project-document case-document" id="clutch" aria-labelledby="clutch-title">
+        <header class="project-header">
+
+          <div class="project-heading"><h2 id="clutch-title">CLUTCH</h2><p class="case-description">LoL Esports 시청 경험을 쿠폰, 포인트, 세트 승패 예측으로 연결한 서비스</p><p class="case-meta">2026.08.11 - 08.31 · 부하 테스트 · 데이터 정합성 · CI/CD</p></div>
+          <a href="https://github.com/seok-cess/Clutch-BE" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </header>
+        <p class="responsibility"><strong>담당 업무</strong>쿠폰 발급 병목 추적, 대량 데이터 정합성 검사, PR 검증과 개발 서버 자동 배포 구성</p>
+        <section class="key-results" aria-label="CLUTCH 핵심 구현 및 검증"><h3>핵심 구현 및 검증</h3><ul><li>20,000 VU ramp-up에서 <strong>발급 10,000건·품절 10,000건, HTTP 실패율 0.00%</strong></li><li>사용자 약 100만·요청 약 350만 건의 정합성 검사에서 <strong>위반 0건</strong></li><li><strong>PR 테스트와 dev 자동 배포</strong>를 변경 이력에 연결</li></ul></section>
+        <div class="case-list">
+          <section class="project-case" aria-labelledby="clutch-case-1">
+            <header class="case-heading"><span aria-hidden="true">01</span><div><h3 id="clutch-case-1">부하 발생기와 서버의 병목을 분리해 추적</h3><p>20,000 VU ramp-up · 쿠폰 재고 10,000장</p></div></header>
+            <dl class="case-stages"><div><dt>문제</dt><dd>대규모 요청에서 응답 지연이 발생할 때 서버와 부하 발생기 중 어느 구간의 영향인지 구분할 필요가 있었습니다.</dd></div><div><dt>원인</dt><dd>성공 수량 행의 <strong>X-lock 경합</strong>과 부하 발생기의 <strong>Docker NAT 구간</strong>이 함께 영향을 줄 수 있었습니다.</dd></div><div class="solution"><dt>해결</dt><dd>두 구간을 분리해 추적하고 <strong>부하를 두 장비에 분산</strong>했습니다. <strong>k6는 Windows 네이티브로 실행</strong>했습니다.</dd></div><div><dt>평가</dt><dd><strong>발급 10,000건, 품절 10,000건, 전송 실패 0건</strong>을 기록했습니다. 평균 응답 시간은 336.95ms, <strong>p95는 951.19ms</strong>였습니다.</dd></div><div><dt>고찰</dt><dd>이 수치는 해당 환경의 ramp-up 결과이며, 20,000명이 한순간에 요청하는 burst 결과와는 구분해야 합니다.</dd></div></dl>
+          </section>
+          <section class="project-case" aria-labelledby="clutch-case-2">
+            <header class="case-heading"><span aria-hidden="true">02</span><div><h3 id="clutch-case-2">대량 데이터 검사에 일관된 조회 기준 적용</h3><p>사용자 약 100만 · 요청 약 350만 · 사용자 쿠폰 약 79만</p></div></header>
+            <dl class="case-stages"><div><dt>문제</dt><dd>많은 데이터를 검사하면서 실행이 겹치거나 조회 시점이 달라지면 결과 해석이 어려워집니다.</dd></div><div><dt>원인</dt><dd>검사 실행의 중복과 검사 중 데이터 변경은 서로 다른 문제이므로 각각 제어할 필요가 있었습니다.</dd></div><div class="solution"><dt>해결</dt><dd><strong>MySQL named lock과 읽기 전용 스냅샷</strong>을 적용했습니다. <strong>검사와 결과 저장 트랜잭션을 분리</strong>하고 중단된 실행 이력 복구를 구현했습니다.</dd></div><div><dt>평가</dt><dd>검증 데이터셋에서 중복·초과 발급·상태 불일치 등 <strong>정합성 위반 0건</strong>을 확인했습니다.</dd></div><div><dt>고찰</dt><dd>검사 결과는 해당 스냅샷과 검사 항목에 대한 결과입니다. 이후 발생한 변경까지 보장하는 수치는 아닙니다.</dd></div></dl>
+          </section>
+          <section class="project-case" aria-labelledby="clutch-case-3">
+            <header class="case-heading"><span aria-hidden="true">03</span><div><h3 id="clutch-case-3">검증부터 배포까지 변경 이력 연결</h3><p>GitHub Actions · Self-hosted Runner</p></div></header>
+            <dl class="case-stages"><div><dt>문제</dt><dd>변경이 반영될 때 테스트 결과와 배포 이력을 함께 확인할 수 있는 흐름이 필요했습니다.</dd></div><div><dt>원인</dt><dd>이슈, 브랜치, PR, 검증, 배포 기록이 분리되면 변경 원인을 역추적하기 어렵습니다.</dd></div><div class="solution"><dt>해결</dt><dd><strong>PR마다 MySQL·Redis·Kafka 기반 테스트</strong>를 실행하고 dev 반영 시 <strong>Docker Compose로 자동 배포</strong>하도록 구성했습니다.</dd></div><div><dt>평가</dt><dd>Jira 이슈부터 브랜치, PR, 검증, 배포까지 변경 이력을 연결했습니다.</dd></div><div><dt>고찰</dt><dd>자동 배포 성공과 서비스 기능의 정상 동작은 별도 확인 대상입니다. 배포 자동화 자체를 무장애 운영의 근거로 해석하지 않습니다.</dd></div></dl>
+          </section>
+        </div>
+        <footer class="case-footer"><p><strong>사용 기술</strong>Java · Spring Boot · MySQL · Redis · Kafka · Docker · GitHub Actions · k6</p><nav aria-label="CLUTCH 근거 자료"><a href="https://github.com/seok-cess/Clutch-BE/blob/dev/docs/07-verification/results/2026-08-30-coupon-20000-vu-load-test.md" target="_blank" rel="noreferrer">부하 테스트 보고서 ↗</a><a href="https://github.com/seok-cess/Clutch-BE/blob/dev/docs/07-verification/results/2026-08-26-coupon-integrity.md" target="_blank" rel="noreferrer">정합성 검증 결과 ↗</a><a href="https://github.com/seok-cess/Clutch-BE/blob/dev/docs/04-conventions/jira-github-workflow.md" target="_blank" rel="noreferrer">협업 흐름 문서 ↗</a></nav></footer>
+      </article>
+
+      <article class="project-document case-document" id="daenggo" aria-labelledby="daenggo-title">
+        <header class="project-header">
+
+          <div class="project-heading"><h2 id="daenggo-title">DAENGGO</h2><p class="case-description">반려동물 일상을 공유하는 서비스</p><p class="case-meta">2026.07.15 - 07.27 · 인증 · OAuth · 그룹 권한</p></div>
+          <a href="https://github.com/meongkk/daenggo-BE" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </header>
+        <p class="responsibility"><strong>담당 업무</strong>토큰 발급·재발급, 카카오 로그인 회원 상태 분기, 그룹 역할과 상태에 따른 접근 범위 구현</p>
+        <section class="key-results" aria-label="DAENGGO 핵심 구현 및 검증"><h3>핵심 구현 및 검증</h3><ul><li>재발급 시 <strong>Refresh Token을 함께 교체하는 회전 구조</strong> 구현</li><li>카카오 OAuth 이후 <strong>신규·기존 회원 흐름 분리</strong></li><li><strong>그룹 역할과 상태에 따른 데이터 공유 범위</strong> 설계</li></ul></section>
+        <div class="case-list">
+          <section class="project-case" aria-labelledby="daenggo-case-1">
+            <header class="case-heading"><span aria-hidden="true">01</span><div><h3 id="daenggo-case-1">인증을 토큰 발급부터 재발급까지 연결</h3><p>JWT · Refresh Token Rotation</p></div></header>
+            <dl class="case-stages"><div><dt>문제</dt><dd>로그인 이후에도 인증을 이어갈 수 있도록 토큰 재발급 흐름이 필요했습니다.</dd></div><div><dt>원인</dt><dd>Access Token 발급만으로는 만료 이후의 인증 유지와 Refresh Token 교체를 처리할 수 없습니다.</dd></div><div class="solution"><dt>해결</dt><dd>Access Token과 Refresh Token을 분리하고 <strong>재발급 시 Refresh Token도 교체</strong>하도록 구현했습니다.</dd></div><div><dt>평가</dt><dd>토큰 발급과 재발급을 연결하고 Refresh Token 회전 구조를 적용했습니다.</dd></div><div><dt>고찰</dt><dd>구현 범위를 정리한 결과이며, 토큰 재사용 공격 탐지나 동시 재발급 테스트 결과는 이 문서에 포함하지 않았습니다.</dd></div></dl>
+          </section>
+          <section class="project-case" aria-labelledby="daenggo-case-2">
+            <header class="case-heading"><span aria-hidden="true">02</span><div><h3 id="daenggo-case-2">회원 상태와 그룹 권한을 구분해 처리</h3><p>Kakao OAuth · 그룹 생명주기</p></div></header>
+            <dl class="case-stages"><div><dt>문제</dt><dd>카카오 인증 결과와 서비스 내 회원 상태, 그룹 권한을 연결해야 했습니다.</dd></div><div><dt>원인</dt><dd>외부 인증 성공만으로 서비스 가입 상태나 그룹 데이터 접근 권한이 결정되지는 않습니다.</dd></div><div class="solution"><dt>해결</dt><dd><strong>신규·기존 회원 흐름을 나누고</strong> 그룹 역할, 상태 전이, 데이터 공유 범위를 서비스 규칙에 맞게 설계했습니다.</dd></div><div><dt>평가</dt><dd>회원 상태별 로그인 처리와 <strong>그룹 역할·상태별 접근 범위</strong>를 구분했습니다.</dd></div><div><dt>고찰</dt><dd>권한 설계와 실제 요청 차단 검증은 구분해야 합니다. 여기에는 정량 테스트 결과를 추가하지 않았습니다.</dd></div></dl>
+          </section>
+        </div>
+        <footer class="case-footer"><p><strong>사용 기술</strong>Java · Spring Boot · Spring Security · Spring Data JPA</p></footer>
+      </article>
+
+      <article class="project-document case-document" id="aideo" aria-labelledby="aideo-title">
+        <header class="project-header">
+          <img class="case-logo" src="../assets/aideo.png" width="64" height="64" alt="AIDEO 로고" loading="lazy">
+          <div class="project-heading"><h2 id="aideo-title">AIDEO</h2><p class="case-description">대본, 이미지, TTS, 자막, 배경음악을 합성하는 AI 숏폼 제작 서비스</p><p class="case-meta">2025.02.15 - 05.30 · 미디어 생성 파이프라인</p></div>
+          <a href="https://github.com/ComPyeong-Capstone" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </header>
+        <p class="responsibility"><strong>담당 업무</strong>TTS 음성·자막 동기화, MoviePy 영상 합성과 S3 저장, 외부 생성 요청 동시 실행 제한</p>
+        <section class="key-results" aria-label="AIDEO 핵심 구현 및 검증"><h3>핵심 구현 및 검증</h3><ul><li><strong>Whisper 단어 타임스탬프</strong>를 자막 배치에 적용</li><li><strong>이미지·음성·자막 합성과 S3 저장</strong> 흐름 연결</li><li>Semaphore로 외부 생성 요청 <strong>동시 실행을 3개로 제한</strong></li></ul></section>
+        <div class="case-list">
+          <section class="project-case" aria-labelledby="aideo-case-1">
+            <header class="case-heading"><span aria-hidden="true">01</span><div><h3 id="aideo-case-1">단어 단위 타임스탬프로 음성과 자막 연결</h3><p>Whisper · MoviePy</p></div></header>
+            <dl class="case-stages"><div><dt>문제</dt><dd>생성한 음성에 맞춰 자막이 나타나도록 타이밍을 맞출 필요가 있었습니다.</dd></div><div><dt>원인</dt><dd>텍스트만으로는 실제 음성에서 각 단어가 재생되는 시점을 알 수 없습니다.</dd></div><div class="solution"><dt>해결</dt><dd><strong>Whisper word timestamp를 자막 배치 기준으로 사용</strong>하고 MoviePy로 이미지, 음성, 자막을 합성했습니다. 생성 결과는 S3 저장 흐름과 연결했습니다.</dd></div><div><dt>평가</dt><dd>단어 단위 타임스탬프를 자막에 반영하고 <strong>최종 영상 출력까지 이어지는 파이프라인</strong>을 구현했습니다.</dd></div><div><dt>고찰</dt><dd>자막 싱크 개선율이나 합성 시간 비교 수치는 현재 자료에 없으므로 구현 범위로 설명합니다.</dd></div></dl>
+          </section>
+          <section class="project-case" aria-labelledby="aideo-case-2">
+            <header class="case-heading"><span aria-hidden="true">02</span><div><h3 id="aideo-case-2">외부 생성 요청의 동시 실행 수 제한</h3><p>Semaphore · 동시 실행 3개</p></div></header>
+            <dl class="case-stages"><div><dt>문제</dt><dd>여러 생성 요청이 한꺼번에 실행되는 상황을 제어할 필요가 있었습니다.</dd></div><div><dt>원인</dt><dd>외부 생성 작업을 제한 없이 실행하면 동시 요청 수가 늘어날 수 있습니다.</dd></div><div class="solution"><dt>해결</dt><dd>Semaphore를 적용해 <strong>동시에 실행하는 외부 생성 요청을 3개로 제한</strong>했습니다.</dd></div><div><dt>평가</dt><dd>동시 실행 수를 제어하는 처리 기준을 구현했습니다.</dd></div><div><dt>고찰</dt><dd>동시 실행 수 제한은 초당 요청 수 제한과 다릅니다. 외부 API 호출 한도 준수 여부는 별도로 확인할 항목입니다.</dd></div></dl>
+          </section>
+        </div>
+        <footer class="case-footer"><p><strong>사용 기술</strong>Python · FastAPI · Whisper · MoviePy · AWS S3</p></footer>
+      </article>
+
+      <article class="project-document case-document" id="ppurio" aria-labelledby="ppurio-title">
+        <header class="project-header">
+          <img class="case-logo" src="../assets/ppurio.png" width="64" height="64" alt="PPURIO 로고" loading="lazy">
+          <div class="project-heading"><h2 id="ppurio-title">PPURIO</h2><p class="case-description">AI 문자 문구와 이미지를 생성하고 저장·발송하는 서비스</p><p class="case-meta">2024.10.08 - 12.04 · 콘텐츠 저장 · 조회</p></div>
+          <a href="https://github.com/CodingPing-PreCapstone/Coding-Ping-Webpage" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </header>
+        <p class="responsibility"><strong>담당 업무</strong>Firestore 공통 데이터 접근 로직과 사용자별 최근 메시지 저장 정책 구현</p>
+        <section class="key-results" aria-label="PPURIO 핵심 구현 및 검증"><h3>핵심 구현 및 검증</h3><ul><li>반복되는 <strong>Firestore 저장·조회 로직을 공통 클래스로 분리</strong></li><li>사용자별 <strong>최근 메시지 10개 유지</strong> 정책 구현</li></ul></section>
+        <div class="case-list">
+          <section class="project-case" aria-labelledby="ppurio-case-1">
+            <header class="case-heading"><span aria-hidden="true">01</span><div><h3 id="ppurio-case-1">Firestore 접근 로직과 최근 메시지 정책 정리</h3><p>Firestore · 사용자별 최근 10개</p></div></header>
+            <dl class="case-stages"><div><dt>문제</dt><dd>생성한 메시지를 다시 조회할 수 있도록 저장하면서 반복되는 데이터 접근 코드를 정리할 필요가 있었습니다.</dd></div><div><dt>원인</dt><dd>여러 곳에 저장·조회 로직이 반복되면 같은 접근 동작을 여러 위치에서 관리해야 합니다.</dd></div><div class="solution"><dt>해결</dt><dd><strong>Firestore 접근 로직을 공통 클래스로 분리</strong>하고 사용자별 최근 메시지 10개를 유지하도록 구현했습니다.</dd></div><div><dt>평가</dt><dd><strong>저장·조회 로직의 중복을 줄이고</strong> 최근 생성 결과를 다시 확인할 수 있는 저장 정책을 구성했습니다.</dd></div><div><dt>고찰</dt><dd>최근 10개 유지 정책은 구현 범위이며, 동시 저장 상황의 개수 보장에 관한 테스트 수치는 포함하지 않았습니다.</dd></div></dl>
+          </section>
+        </div>
+        <footer class="case-footer"><p><strong>사용 기술</strong>Firebase Firestore</p></footer>
+      </article>
+
+      <section class="closing" aria-labelledby="closing-title"><h2 id="closing-title">코드와 개발 기록</h2><p>프로젝트 코드와 검증 과정은 각 GitHub 저장소와 근거 문서에서 확인할 수 있습니다.</p><div><a href="https://github.com/seok-cess/Clutch-BE" target="_blank" rel="noreferrer">GitHub</a><a href="mailto:whdtn7855@gmail.com">Email</a></div></section>
+    </main>
+  </div>
+  <footer><span>© 2026 석종수 · Backend Engineering Portfolio</span><a href="#top">맨 위로 ↑</a></footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -8,13 +8,11 @@
 python -m http.server 8000
 ```
 
-브라우저에서 `http://localhost:8000`을 엽니다.
+브라우저에서 `http://localhost:8000`을 엽니다. 이전 버전은 `/portfolio-v1/`과 `/portfolio-v2/`에서 볼 수 있습니다. `/portfolio-v3/`은 메인으로 이동합니다.
 
 ## 구성
 
-- `index.html`: 이력서와 프로젝트 콘텐츠
-- `styles.css`: 화면, 모바일, A4 인쇄 레이아웃
-- `script.js`: 화이트·다크 모드 전환과 선택 상태 저장
-- `assets/`: AIDEO와 뿌리오 프로젝트 이미지
-
-상단의 `PDF 저장` 버튼을 누르면 브라우저 인쇄 화면에서 PDF로 저장할 수 있습니다.
+- `index.html`, `styles.css`, `script.js`: 현재 메인 포트폴리오(v3)
+- `portfolio-v1/`, `portfolio-v2/`: 이전 포트폴리오
+- `portfolio-v3/`: 메인 포트폴리오로 이동하는 주소
+- `assets/`: 프로필과 프로젝트 이미지

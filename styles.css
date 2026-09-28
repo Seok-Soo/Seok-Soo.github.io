@@ -82,7 +82,7 @@
 @media print{
   :root,:root[data-theme="dark"]{color-scheme:light;--background:#fff;--surface:#fafafd;--text:#29272d;--muted:#747078;--line:#eceaf0;--line-strong:#dedbe5;--accent:#7654a8;--accent-soft:#f3eefb;--solution-text:#ad4038}
   html{scroll-behavior:auto}body{min-width:0;background:#fff;print-color-adjust:exact;-webkit-print-color-adjust:exact}
-  .site-header,.section-nav,.project-jump,.site-footer{display:none!important}
+  .skip-link,.site-header,.section-nav,.project-jump,.site-footer{display:none!important}
   .hero,.page-layout{display:block;width:100%;margin:0;border:0;padding:0}
   .hero{position:relative;min-height:0;margin-bottom:30px}.hero-copy{padding-right:150px}.portrait-placeholder{position:absolute;top:0;right:0;width:120px}
   .main-content{width:100%}.content-section{margin-bottom:42px}.projects-section{margin-bottom:50px}.project-document{margin-bottom:50px}

@@ -1,5 +1,6 @@
 const navLinks=[...document.querySelectorAll('.section-nav a')];
 const themeToggle = document.getElementById('theme-toggle');
+document.getElementById('pdf-download').addEventListener('click', () => window.print());
 const systemTheme = matchMedia('(prefers-color-scheme: dark)');
 let manualTheme = false;
 try { manualTheme = ['light', 'dark'].includes(localStorage.getItem('portfolio-v2-theme')); } catch {}

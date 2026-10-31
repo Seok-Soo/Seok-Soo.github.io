@@ -15,4 +15,4 @@ python -m http.server 8000
 - `index.html`, `styles.css`, `script.js`: 현재 메인 포트폴리오(v3)
 - `portfolio-v1/`, `portfolio-v2/`: 이전 포트폴리오
 - `portfolio-v3/`: 메인 포트폴리오로 이동하는 주소
-- `assets/`: 프로필과 프로젝트 이미지
+- `assets/`: 프로필, 프로젝트 이미지, 기술 아이콘

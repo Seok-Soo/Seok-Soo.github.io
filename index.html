@@ -35,7 +35,7 @@
   <div class="page-layout" id="content">
     <nav class="section-nav" aria-label="페이지 목차">
       <a href="#skills">기술</a><a href="#activity">활동·수상</a><a href="#education">학력·자격증</a><a href="#projects">프로젝트</a>
-      <div class="project-nav"><a href="#clutch">CLUTCH</a><a href="#daenggo">DAENGGO</a><a href="#aideo">AIDEO</a><a href="#ppurio">PPURIO</a></div>
+      <div class="project-nav"><a href="#getddo">GETDDO</a><a href="#clutch">CLUTCH</a><a href="#daenggo">DAENGGO</a><a href="#aideo">AIDEO</a><a href="#ppurio">PPURIO</a></div>
     </nav>
 
     <main class="main-content">
@@ -84,6 +84,7 @@
 
       <section class="content-section" id="activity" aria-labelledby="activity-title"><h2 id="activity-title">활동과 수상</h2>
         <article class="simple-entry"><h3>LG U+ URECA 4기 · Backend</h3><p>Java와 Spring 기반 백엔드 개발, 데이터베이스, Redis, Docker 환경을 학습하고 팀 프로젝트에 적용했습니다. 기능 구현 이후 테스트 조건과 결과를 문서로 남겼습니다.</p></article>
+        <article class="simple-entry"><h3>최우수 훈련생</h3><p>최우수 훈련생으로 선정되어 수상했습니다.</p></article>
         <article class="simple-entry"><h3>종합프로젝트 경진대회 우수상 · CLUTCH</h3><p>LoL Esports 팬 참여 플랫폼 CLUTCH로 우수상을 받았습니다. 동시 쿠폰 발급, 데이터 정합성 검사, 테스트와 배포 자동화를 담당했습니다.</p></article>
         <article class="simple-entry"><h3>캡스톤디자인 작품발표회 우수상 · AIDEO</h3><p>생성형 AI를 활용한 숏폼 제작 서비스 AIDEO로 우수상을 받았습니다. 음성·자막 동기화와 영상 합성 파이프라인을 구현했습니다.</p></article>
       </section>
@@ -100,12 +101,69 @@
 
       <section class="content-section projects-section" id="projects" aria-labelledby="projects-title"><h2 id="projects-title">프로젝트</h2>
         <div class="project-overview">
+          <a href="#getddo"><strong>GETDDO</strong><span>이벤트 응모 및 추첨 플랫폼</span><span>가중치 추첨 · 실패 복구 · 결과 공개</span><small>백엔드 5인 팀</small><em>로컬 실험 · 후보 저장 시간 약 92.1% 단축</em></a>
           <a href="#clutch"><strong>CLUTCH</strong><span>LoL Esports 팬 참여 플랫폼</span><span>동시 쿠폰 발급 · 정합성 검증 · CI/CD</span><small>2026.08</small><em>20,000 VU · HTTP 실패율 0.00%</em></a>
           <a href="#daenggo"><strong>DAENGGO</strong><span>반려동물 일상 서비스</span><span>JWT 인증 · Kakao OAuth · 그룹 권한</span><small>2026.07</small><em>인증 전체 생명주기 구현</em></a>
           <a href="#aideo"><strong>AIDEO</strong><span>생성형 AI 숏폼 제작 서비스</span><span>미디어 파이프라인 · 동시 요청 제한</span><small>2025.02 - 05</small><em>캡스톤디자인 우수상</em></a>
           <a href="#ppurio"><strong>PPURIO</strong><span>AI 문자 생성·발송 서비스</span><span>Firestore · 데이터 접근 구조</span><small>2024.10 - 12</small><em>최근 메시지 유지 정책 구현</em></a>
         </div>
       </section>
+
+      <article class="project-document case-document" id="getddo" aria-labelledby="getddo-title">
+        <header class="project-header">
+          <div class="project-heading"><h2 id="getddo-title">GETDDO</h2><p class="case-description">출석·미션·게임으로 획득한 응모권으로 경품 이벤트에 응모하고 추첨 결과를 확인하는 서비스</p><p class="case-meta">백엔드 5인 팀 · 추첨 · 당첨 취소·재추첨 · 결과 공개</p></div>
+          <a href="https://github.com/Uplus-GETDDO/getddo-be" target="_blank" rel="noreferrer">GitHub ↗</a>
+        </header>
+        <p class="responsibility"><strong>담당 업무</strong>가중치 기반 추첨, 중복 실행 방지와 실패 복구, 당첨 취소·재추첨·결과 공개, 관리자 어뷰징 차단 이력 조회 API 구현 및 자동 차단 연동 설계</p>
+        <section class="key-results" aria-label="GETDDO 핵심 구현 및 검증"><h3>핵심 구현 및 검증</h3><ul><li>후보 1만 명 저장 구간의 로컬 비교 실험에서 <strong>3회 중앙값 25.837초 → 2.035초, 약 92.1% 단축</strong></li><li><strong>DB 잠금·UNIQUE 제약·실행 소유권 관리</strong>로 중복 실행 방지와 동일 실행 실패 복구 구현</li><li><strong>후보·가중치·경품 조건 스냅샷과 공개 버전</strong>으로 추첨 근거와 사용자 공개 명단 보존</li></ul></section>
+        <div class="case-list">
+          <section class="project-case" aria-labelledby="getddo-case-1">
+            <header class="case-heading"><span aria-hidden="true">01</span><div><h3 id="getddo-case-1">추첨 후보 저장에 JPA 배치 처리 적용</h3><p>Hibernate 세션 배치 100 · MySQL rewriteBatchedStatements</p></div></header>
+            <dl class="case-stages">
+              <div><dt>문제</dt><dd>대량 후보와 실행 연결 데이터를 저장하는 구간의 INSERT 실행 횟수와 소요 시간을 줄일 필요가 있었습니다.</dd></div>
+              <div class="solution"><dt>해결</dt><dd>기존 JPA의 UUID 생성·감사 시각·JSON 매핑을 유지하면서 <strong>최초 후보 저장 구간에만 세션 배치 크기 100</strong>을 적용했습니다. 성공·실패 모두 기존 설정을 복원하고, MySQL의 <strong>rewriteBatchedStatements=true</strong> 적용 여부를 나누어 비교했습니다.</dd></div>
+              <div><dt>평가</dt><dd>기존 로컬 실험에서 후보 1만 명 저장 시간은 <strong>3회 중앙값 기준 25.837초에서 2.035초로 약 92.1% 단축</strong>됐습니다. 후보·연결 INSERT 실행 횟수는 <strong>20,000회에서 200회</strong>로 감소했습니다.</dd></div>
+              <div><dt>고찰</dt><dd>배치 크기와 업무 트랜잭션의 커밋 단위를 구분해 기존 원자성을 유지했습니다. 수치는 특정 계측 버전의 로컬 저장 구간 비교이며, 운영 처리량이나 최신 구현 전체의 성능을 의미하지 않습니다.</dd></div>
+            </dl>
+          </section>
+          <section class="project-case" aria-labelledby="getddo-case-2">
+            <header class="case-heading"><span aria-hidden="true">02</span><div><h3 id="getddo-case-2">중복 요청에서도 동일 실행의 결과를 한 번만 확정</h3><p>DB 잠금 · UNIQUE 제약 · 실행 소유권 · 실패 복구</p></div></header>
+            <dl class="case-stages">
+              <div><dt>문제</dt><dd>자동 추첨, 관리자 요청, 재시도가 겹쳐도 동일 실행의 결과가 한 번만 확정되어야 했습니다.</dd></div>
+              <div class="solution"><dt>해결</dt><dd><strong>이벤트 → 추첨 실행 순서의 DB 잠금과 UNIQUE 제약</strong>으로 등록·확정 충돌을 제어했습니다. 실행 등록, 입력 준비, 결과 확정을 분리하고 <strong>실행 소유권 토큰과 만료 시각</strong>으로 처리 중인 시도를 구분했습니다.</dd></div>
+              <div><dt>복구</dt><dd>결과 저장 실패 시 부분 결과는 롤백하고 <strong>실패 이력은 별도 트랜잭션으로 보존</strong>했습니다. 일시적 저장 오류는 제한적으로 자동 재시도하고, 정합성 오류는 관리자 확인 대상으로 분리했습니다.</dd></div>
+              <div><dt>결과</dt><dd>중단 후에도 <strong>같은 실행 ID로 복구</strong>하고, 이미 확정된 실행의 재요청에는 저장된 결과를 반환하도록 구현했습니다.</dd></div>
+            </dl>
+          </section>
+          <section class="project-case" aria-labelledby="getddo-case-3">
+            <header class="case-heading"><span aria-hidden="true">03</span><div><h3 id="getddo-case-3">가중치 추첨의 입력과 확정 근거 보존</h3><p>SecureRandom · BigInteger · 후보·조건 스냅샷</p></div></header>
+            <dl class="case-stages">
+              <div><dt>문제</dt><dd>응모권 등급별 가중치를 반영하면서 중복 당첨을 방지하고, 데이터나 정책이 바뀐 뒤에도 당시 추첨 근거를 확인할 수 있어야 했습니다.</dd></div>
+              <div class="solution"><dt>해결</dt><dd>누적 가중치 구간에서 <strong>SecureRandom으로 당첨자를 선정</strong>하고 선정된 후보를 다음 추첨 대상에서 제거했습니다. 전체 가중치는 <strong>BigInteger</strong>로 계산해 합계의 정수 범위 초과에 대응했습니다.</dd></div>
+              <div><dt>검사</dt><dd>후보, 응모권 사용 근거, 가중치와 경품 조건을 스냅샷으로 저장했습니다. 응모 기록과 실제 응모권 차감 이력을 대조하고, <strong>저장된 후보·조건·확정 결과를 대조하는 검사 기능</strong>을 구현했습니다.</dd></div>
+              <div><dt>결과</dt><dd>플래티넘 등급 추가 시에도 <strong>과거 스냅샷의 가중치를 유지하는 버전 호환 처리</strong>를 적용해 당시 입력과 조건을 추적할 수 있도록 했습니다.</dd></div>
+            </dl>
+          </section>
+          <section class="project-case" aria-labelledby="getddo-case-4">
+            <header class="case-heading"><span aria-hidden="true">04</span><div><h3 id="getddo-case-4">원본 결과를 보존하는 취소·재추첨과 결과 공개</h3><p>취소 이력 · 빈자리 재추첨 · 공개 버전</p></div></header>
+            <dl class="case-stages">
+              <div><dt>문제</dt><dd>개별 당첨 취소와 재추첨을 처리하면서 기존 당첨 결과와 사용자가 실제로 확인한 공개 명단을 보존해야 했습니다.</dd></div>
+              <div class="solution"><dt>해결</dt><dd>원본 결과를 덮어쓰지 않고 <strong>취소 사유·처리자·연결 실행을 별도 이력으로 저장</strong>했습니다. 최초 후보와 가중치를 재사용해 취소된 자리만 재추첨하고, 유지 대상 당첨자와 경품 배정은 보존했습니다.</dd></div>
+              <div><dt>공개</dt><dd>내부 확정 결과와 공개 명단을 구분하는 버전을 관리했습니다. 관리자 발표 요청 한 번으로 <strong>최종 확인, 공개 명단 저장, 이벤트 상태 변경, 알림 작업 등록을 같은 트랜잭션</strong>에서 처리했습니다.</dd></div>
+              <div><dt>결과</dt><dd>최초 추첨부터 취소·재추첨·발표까지 이력을 연결했습니다. 공개 전 당첨 정보 노출을 제한하고 공개 명단에 개인정보 마스킹을 적용했습니다.</dd></div>
+            </dl>
+          </section>
+          <section class="project-case" aria-labelledby="getddo-case-5">
+            <header class="case-heading"><span aria-hidden="true">05</span><div><h3 id="getddo-case-5">관리자 어뷰징 차단 이력 조회와 연동 경계 설계</h3><p>목록·상세 API · 관리자 권한 · MySQL 검증</p></div></header>
+            <dl class="case-stages">
+              <div><dt>구현</dt><dd><strong>활성 관리자 권한을 확인한 뒤 차단 이력을 조회</strong>하는 목록·상세 API를 구현했습니다. 차단 사유, 발생 시각, 관련 사용자·이벤트와 판정 근거를 조회 모델로 제공했습니다.</dd></div>
+              <div><dt>검증</dt><dd><strong>MySQL 조회와 마이그레이션 보호를 검증하는 테스트</strong>를 추가했습니다.</dd></div>
+              <div><dt>설계</dt><dd>응모 자동 차단 연동에 필요한 원자적 판정, 중복 기록 방지, 저장 실패 복구 경계를 설계·문서화했습니다. <strong>차단 이력 조회 API는 구현 범위이며, 자동 차단 연동은 설계 범위</strong>입니다.</dd></div>
+            </dl>
+          </section>
+        </div>
+        <footer class="case-footer"><p><strong>사용 기술</strong>Java 21 · Spring Boot · Spring Data JPA · MySQL · Flyway · JUnit · Testcontainers</p><nav aria-label="GETDDO 근거 자료"><a href="https://github.com/Uplus-GETDDO/getddo-be" target="_blank" rel="noreferrer">백엔드 저장소 ↗</a><a href="https://github.com/Uplus-GETDDO/getddo-be/blob/HEAD/docs/03-database/drawing-snapshot-batching.md" target="_blank" rel="noreferrer">배치 저장 측정 조건과 한계 ↗</a></nav></footer>
+      </article>
 
       <article class="project-document case-document" id="clutch" aria-labelledby="clutch-title">
         <header class="project-header">
@@ -195,6 +253,6 @@
     </main>
   </div>
   <footer class="site-footer"><span>© 2026 석종수 · Backend Engineering Portfolio</span><div class="footer-actions"><button class="pdf-download" id="pdf-download" type="button" title="인쇄 창에서 PDF로 저장">PDF 다운로드 ↓</button><a href="#top">맨 위로 ↑</a></div></footer>
-  <script src="script.js?v=20260928-1"></script>
+  <script src="script.js?v=20261101-1"></script>
 </body>
 </html>

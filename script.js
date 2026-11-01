@@ -21,7 +21,7 @@ systemTheme.addEventListener('change', event => {
   if (!manualTheme) applyTheme(event.matches ? 'dark' : 'light');
 });
 const targets = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
-const projectIds = new Set(['clutch', 'daenggo', 'aideo', 'ppurio']);
+const projectIds = new Set(['getddo', 'clutch', 'daenggo', 'aideo', 'ppurio']);
 let scrollUpdatePending = false;
 let previousActiveId = '';
 function updateCurrentSection() {

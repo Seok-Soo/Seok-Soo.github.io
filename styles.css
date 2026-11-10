@@ -63,17 +63,18 @@
 
 /* v3: introductory statement and technology logos. */
 .hero-statement{margin:18px 0 14px;font-size:clamp(1.55rem,3vw,2.35rem);font-weight:800;line-height:1.4;letter-spacing:-.045em;word-break:keep-all}
-.skill-groups{display:grid;gap:26px}
-.skill-group{border:1px solid var(--line);background:var(--surface);padding:23px 25px}
-.skill-group-heading{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:20px}
-.skill-group-heading h3{margin:0;font-size:1rem}
-.skill-group-heading p{max-width:470px;margin:0;color:var(--muted);font-size:.79rem;text-align:right;word-break:keep-all}
-.skill-icons{display:flex;flex-wrap:wrap;gap:10px;margin:0;padding:0;list-style:none}
-.skill-icons li{display:flex;align-items:center;gap:10px;min-height:54px;border:1px solid var(--line);background:var(--background);padding:8px 13px;font-size:.79rem;font-weight:650}
-.skill-icons img{display:block;width:32px;height:32px;object-fit:contain}
+.skill-groups{border-top:1px solid var(--line)}
+.skill-group{display:grid;grid-template-columns:150px minmax(0,1fr);gap:9px 24px;border-bottom:1px solid var(--line);padding:22px 0}
+.skill-group-heading{display:contents}
+.skill-group-heading h3{grid-column:1;grid-row:1 / 3;margin:3px 0 0;font-size:.88rem;line-height:1.6}
+.skill-group-heading p{grid-column:2;grid-row:2;margin:0;color:var(--muted);font-size:.77rem;word-break:keep-all;overflow-wrap:anywhere}
+.skill-icons{grid-column:2;grid-row:1;display:flex;flex-wrap:wrap;gap:10px 22px;margin:0;padding:0;list-style:none}
+.skill-icons li{display:flex;align-items:center;gap:8px;min-height:30px;font-size:.8rem;font-weight:650;white-space:nowrap}
+.skill-icons img{display:block;flex:0 0 26px;width:26px;height:26px;object-fit:contain}
 .skill-additional{margin:16px 0 0;color:var(--muted);font-size:.8rem}
 .section-nav a[aria-current="location"]{border-left-color:var(--accent);color:var(--accent)}
-@media(max-width:600px){.skill-group{padding:19px}.skill-group-heading{display:block}.skill-group-heading p{margin-top:7px;text-align:left}.skill-icons li{min-height:48px;padding:7px 9px}.skill-icons img{width:27px;height:27px}.section-nav a[aria-current="location"]{border-left-color:transparent;background:var(--accent-soft)}}
+@media(max-width:800px){.skill-group{grid-template-columns:minmax(0,1fr);gap:10px;padding:20px 0}.skill-group-heading h3{grid-column:1;grid-row:1;margin:0}.skill-icons{grid-column:1;grid-row:2;gap:10px 18px}.skill-group-heading p{grid-column:1;grid-row:3}}
+@media(max-width:600px){.skill-icons img{flex-basis:24px;width:24px;height:24px}.section-nav a[aria-current="location"]{border-left-color:transparent;background:var(--accent-soft)}}
 @media(max-width:600px){.section-nav{position:sticky;top:58px;z-index:15;display:flex;flex-wrap:nowrap;gap:2px;overflow-x:auto;width:100%;margin-bottom:38px;border-bottom:1px solid var(--line);background:var(--background);padding:8px 0;scrollbar-width:thin}.section-nav>a,.project-nav a{flex:0 0 auto;white-space:nowrap}.project-nav{display:contents}.section-nav a[aria-current="true"]{background:var(--accent-soft)}.section-nav a[aria-current="location"]{background:transparent}section[id],article[id]{scroll-margin-top:120px}}
 .resume-group+.resume-group{margin-top:30px}.resume-group>h3{margin:0 0 8px;color:var(--accent);font-size:.83rem;font-weight:750}.resume-group .simple-entry{padding-block:14px}.resume-group .simple-entry h3{margin-bottom:3px}
 .footer-actions{display:flex;align-items:center;gap:20px}.pdf-download{display:inline-flex;align-items:center;justify-content:center;min-height:38px;border:1px solid var(--accent);border-radius:4px;background:var(--background);padding:6px 14px;color:var(--accent);font:inherit;font-size:.78rem;font-weight:750;cursor:pointer}.pdf-download:hover{background:var(--accent-soft)}
